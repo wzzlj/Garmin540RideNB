@@ -1,0 +1,159 @@
+------------------------------------------------------------------------------
+Executing test auditSlowClimbGrade...
+DEBUG (05:30): 3.6 km/h, 10% climb, 30 s: grade=10.000000
+PASS
+------------------------------------------------------------------------------
+Executing test auditMissingTimerClearsLap...
+DEBUG (05:30): missing timer: lapTime=null lapSpeed=null
+PASS
+------------------------------------------------------------------------------
+Executing test auditIncompleteStoredState...
+PASS
+------------------------------------------------------------------------------
+Executing test auditUnobservedLowPowerGap...
+DEBUG (05:30): 10-second callback gap: high=true
+PASS
+------------------------------------------------------------------------------
+Executing test auditNegativeGrade...
+PASS
+------------------------------------------------------------------------------
+Executing test auditClockWrapRecovery...
+PASS
+------------------------------------------------------------------------------
+Executing test auditRepeatedTransitions...
+PASS
+------------------------------------------------------------------------------
+Executing test auditLongRideSampleBounds...
+PASS
+------------------------------------------------------------------------------
+Executing test auditRoundedEntryBoundary...
+DEBUG (05:30): 599.67 W displayed=600, high=false
+PASS
+------------------------------------------------------------------------------
+Executing test malformedStorageVariants...
+PASS
+------------------------------------------------------------------------------
+Executing test missingTimerRecoversAccumulation...
+PASS
+------------------------------------------------------------------------------
+Executing test gradeWindowExpiresAndStationaryClears...
+PASS
+------------------------------------------------------------------------------
+Executing test rawPowerControlsSmoothedSwitch...
+PASS
+------------------------------------------------------------------------------
+Executing test configuredEntryThresholdChangesSwitch...
+PASS
+------------------------------------------------------------------------------
+Executing test deviceThresholdEditorSaveAndLimits...
+PASS
+------------------------------------------------------------------------------
+Executing test settingsConfirmationFlow...
+PASS
+------------------------------------------------------------------------------
+Executing test powerWindowIncludesZero...
+PASS
+------------------------------------------------------------------------------
+Executing test missingPowerShowsMissing...
+PASS
+------------------------------------------------------------------------------
+Executing test lapBoundaryUsesLatestActivity...
+PASS
+------------------------------------------------------------------------------
+Executing test pauseDoesNotAddPowerOrTime...
+PASS
+------------------------------------------------------------------------------
+Executing test recordingGapInvalidatesLapPower...
+PASS
+------------------------------------------------------------------------------
+Executing test timerResetStartsFreshLap...
+PASS
+------------------------------------------------------------------------------
+Executing test gradeUsesDistanceWindow...
+PASS
+------------------------------------------------------------------------------
+Executing test loadingMidRideDoesNotInventLap...
+PASS
+------------------------------------------------------------------------------
+Executing test resumeKeepsLapBoundary...
+PASS
+------------------------------------------------------------------------------
+Executing test formatLongRide...
+PASS
+------------------------------------------------------------------------------
+Executing test consecutiveLapsWithMissingDistance...
+PASS
+------------------------------------------------------------------------------
+Executing test highPowerThresholdAndReturnDelay...
+PASS
+------------------------------------------------------------------------------
+Executing test thresholdRecoveryRestartsDelay...
+PASS
+------------------------------------------------------------------------------
+Executing test missingPowerDoesNotCountAsLow...
+PASS
+------------------------------------------------------------------------------
+Executing test clockUsesTwelveHours...
+PASS
+------------------------------------------------------------------------------
+Executing test speedDropsDecimalAtOneHundred...
+PASS
+------------------------------------------------------------------------------
+Executing test settingsReloadThreshold...
+PASS
+------------------------------------------------------------------------------
+Executing test hysteresisBandCancelsReturn...
+PASS
+------------------------------------------------------------------------------
+Executing test automaticSwitchCanBeDisabled...
+PASS
+------------------------------------------------------------------------------
+Executing test signalLossReturnsAfterTimeout...
+PASS
+------------------------------------------------------------------------------
+Executing test settingsValidateNewOptions...
+PASS
+
+==============================================================================
+RESULTS
+Test:                                 Status:
+auditSlowClimbGrade                   PASS
+auditMissingTimerClearsLap            PASS
+auditIncompleteStoredState            PASS
+auditUnobservedLowPowerGap            PASS
+auditNegativeGrade                    PASS
+auditClockWrapRecovery                PASS
+auditRepeatedTransitions              PASS
+auditLongRideSampleBounds             PASS
+auditRoundedEntryBoundary             PASS
+malformedStorageVariants              PASS
+missingTimerRecoversAccumulation      PASS
+gradeWindowExpiresAndStationaryClears PASS
+rawPowerControlsSmoothedSwitch        PASS
+configuredEntryThresholdChangesSwitch PASS
+deviceThresholdEditorSaveAndLimits    PASS
+settingsConfirmationFlow              PASS
+powerWindowIncludesZero               PASS
+missingPowerShowsMissing              PASS
+lapBoundaryUsesLatestActivity         PASS
+pauseDoesNotAddPowerOrTime            PASS
+recordingGapInvalidatesLapPower       PASS
+timerResetStartsFreshLap              PASS
+gradeUsesDistanceWindow               PASS
+loadingMidRideDoesNotInventLap        PASS
+resumeKeepsLapBoundary                PASS
+formatLongRide                        PASS
+consecutiveLapsWithMissingDistance    PASS
+highPowerThresholdAndReturnDelay      PASS
+thresholdRecoveryRestartsDelay        PASS
+missingPowerDoesNotCountAsLow         PASS
+clockUsesTwelveHours                  PASS
+speedDropsDecimalAtOneHundred         PASS
+settingsReloadThreshold               PASS
+hysteresisBandCancelsReturn           PASS
+automaticSwitchCanBeDisabled          PASS
+signalLossReturnsAfterTimeout         PASS
+settingsValidateNewOptions            PASS
+Ran 37 tests
+
+PASSED (passed=37, failed=0, errors=0)

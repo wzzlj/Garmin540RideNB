@@ -1,0 +1,4 @@
+<resources><string id="AppName">Garmin540RideNB</string><string id="PowerThresholdTitle">Sprint entry threshold (3s power, W)</string><string id="AutoSwitchTitle">Automatic high-power screen</string>
+<string id="ExitThresholdTitle">Return threshold (W, capped at entry)</string>
+<string id="MissingSecondsTitle">Return after power signal loss (seconds)</string>
+</resources>

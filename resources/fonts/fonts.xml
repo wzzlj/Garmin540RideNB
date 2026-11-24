@@ -1,0 +1,24 @@
+<fonts>
+  <font id="TopTime" filename="TopTime.fnt" antialias="true"/>
+  <font id="TopNumber" filename="TopNumber.fnt" antialias="true"/>
+  <font id="SpeedAverage" filename="SpeedAverage.fnt" antialias="true"/>
+  <font id="PowerAverage" filename="PowerAverage.fnt" antialias="true"/>
+  <font id="SpeedHero" filename="SpeedHero.fnt" antialias="true"/>
+  <font id="PowerHero" filename="PowerHero.fnt" antialias="true"/>
+  <font id="SideNumber" filename="SideNumber.fnt" antialias="true"/>
+  <font id="LapNumber" filename="LapNumber.fnt" antialias="true"/>
+  <font id="LapSpeed" filename="LapSpeed.fnt" antialias="true"/>
+  <font id="LapDistance" filename="LapDistance.fnt" antialias="true"/>
+  <font id="SmallNumber" filename="SmallNumber.fnt" antialias="true"/>
+  <font id="Unit11" filename="Unit11.fnt" antialias="true"/>
+  <font id="Unit12" filename="Unit12.fnt" antialias="true"/>
+  <font id="Unit13" filename="Unit13.fnt" antialias="true"/>
+  <font id="HighSpeed" filename="HighSpeed.fnt" antialias="true"/>
+  <font id="HighPower" filename="HighPower.fnt" antialias="true"/>
+  <font id="HighSide" filename="HighSide.fnt" antialias="true"/>
+  <font id="HighTime" filename="HighTime.fnt" antialias="true"/>
+  <font id="Clock" filename="Clock.fnt" antialias="true"/>
+  <font id="HighPowerThree" filename="HighPowerThree.fnt" antialias="true"/>
+  <font id="Grade" filename="Grade.fnt" antialias="true"/>
+  <font id="SettingsText" filename="SettingsText.fnt" antialias="true"/>
+</fonts>
