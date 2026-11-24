@@ -6,6 +6,8 @@ using Toybox.WatchUi;
 class SprintSettings extends WatchUi.View {
     var value;
     var active = false;
+    var clock24;
+    var originalClock24;
     var saved = false;
     var original;
     var dialog = 0;
@@ -15,6 +17,8 @@ class SprintSettings extends WatchUi.View {
         var setting = Application.Properties.getValue("PowerThreshold");
         value = setting instanceof Lang.Number && setting >= 1 && setting <= 10000 ? setting : 600;
         original = value;
+        clock24 = Application.Properties.getValue("Clock24") == true;
+        originalClock24 = clock24;
     }
     function onShow() { active = true; }
     function onHide() { active = false; }
@@ -26,12 +30,14 @@ class SprintSettings extends WatchUi.View {
     }
     function commit() {
         Application.Properties.setValue("PowerThreshold", value);
+        Application.Properties.setValue("Clock24", clock24);
+        originalClock24 = clock24;
         Application.getApp().onSettingsChanged();
         saved = true;
         original = value;
         dialog = 1;
     }
-    function dirty() { return value != original; }
+    function dirty() { return value != original || clock24 != originalClock24; }
     function requestBack() {
         if (dialog != 0) { dialog = 0; return false; }
         if (dirty()) { dialog = 2; discard = false; return false; }
@@ -40,7 +46,7 @@ class SprintSettings extends WatchUi.View {
     function confirm() {
         if (dialog == 1) { dialog = 0; return false; }
         if (dialog == 2) {
-            if (discard) { value = original; dialog = 0; return true; }
+            if (discard) { value = original; clock24 = originalClock24; dialog = 0; return true; }
             dialog = 0; return false;
         }
         commit(); return false;
@@ -54,7 +60,7 @@ class SprintSettings extends WatchUi.View {
         var textFont = WatchUi.loadResource(Rez.Fonts.SettingsText);
         var numberFont = WatchUi.loadResource(Rez.Fonts.LapNumber);
         dc.drawText(center, 12, textFont, "Sprint v1.0", Graphics.TEXT_JUSTIFY_CENTER);
-        dc.drawText(center, 40, textFont, "3s average power", Graphics.TEXT_JUSTIFY_CENTER);
+        dc.drawText(center, 40, textFont, clock24 ? "24h / MENU: Toggle" : "12h / MENU: Toggle", Graphics.TEXT_JUSTIFY_CENTER);
         var digits = value.format("%d");
         var numberWidth = dc.getTextWidthInPixels(digits, numberFont);
         var unitWidth = dc.getTextWidthInPixels("W", textFont);
@@ -83,6 +89,8 @@ class SprintSettingsDelegate extends WatchUi.BehaviorDelegate {
         var next = new SprintSettings();
         next.value = editor.value;
         next.original = editor.original;
+        next.clock24 = editor.clock24;
+        next.originalClock24 = editor.originalClock24;
         next.saved = editor.saved;
         next.dialog = editor.dialog;
         next.discard = editor.discard;
@@ -92,6 +100,10 @@ class SprintSettingsDelegate extends WatchUi.BehaviorDelegate {
         if (editor.dialog == 2) { editor.discard = !editor.discard; }
         else if (editor.dialog == 0) { editor.adjust(delta); }
         refresh(); return true;
+    }
+    function onMenu() {
+        if (editor.dialog == 0) { editor.clock24 = !editor.clock24; editor.saved = false; refresh(); }
+        return true;
     }
     function onPreviousPage() { return move(10); }
     function onNextPage() { return move(-10); }

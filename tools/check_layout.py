@@ -34,6 +34,7 @@ class BitmapFont:
 
 fonts = [BitmapFont(name) for name in SPECS]
 source = (ROOT / "source/RideField.mc").read_text()
+source = source.replace("speedUnit()", '"km/h"').replace("distanceUnit()", '"km"').replace("ascentUnit()", '"m"')
 pattern = r', "([^"]*)", (\d+), (\d+), (\d+), (\d+), ([\w.]+), (true|false)\);'
 fields = re.findall(pattern, source)
 assert len(fields) == 19

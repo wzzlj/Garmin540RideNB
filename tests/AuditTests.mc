@@ -245,3 +245,49 @@ function settingsConfirmationFlow(logger) {
  Application.Properties.setValue("PowerThreshold",600);
  return true;
 }
+
+(:test)
+class UnitSettingsSample {
+ var distanceUnits = Toybox.System.UNIT_METRIC;
+ var elevationUnits = Toybox.System.UNIT_METRIC;
+ var isNightModeEnabled = false;
+ function initialize() {}
+}
+(:test)
+function automaticSystemUnitsAndNight(logger) {
+ var f = new RideField(); var s = new UnitSettingsSample();
+ f.applySystem(s, Toybox.Graphics.COLOR_WHITE);
+ Test.assertEqual(f.speed(10.0), "36.0");
+ Test.assertEqual(f.kilometers(1609.344), "1.61");
+ s.distanceUnits = Toybox.System.UNIT_STATUTE;
+ s.elevationUnits = Toybox.System.UNIT_STATUTE;
+ f.applySystem(s, Toybox.Graphics.COLOR_WHITE);
+ Test.assertEqual(f.speed(10.0), "22.4");
+ Test.assertEqual(f.speedText(36.0), "22.4");
+ Test.assertEqual(f.kilometers(1609.344), "1.00");
+ Test.assertEqual(f.ascent(100.0), "328");
+ Test.assertEqual(f.speedUnit(), "mi/h"); Test.assertEqual(f.ascentUnit(), "ft");
+ s.elevationUnits = Toybox.System.UNIT_METRIC;
+ f.applySystem(s, Toybox.Graphics.COLOR_BLACK);
+ Test.assert(f.night); Test.assertEqual(f.ascentUnit(), "m");
+ Test.assertEqual(f.ink(0x0055aa), 0x55aaff);
+ s.isNightModeEnabled = true;
+ f.applySystem(s, Toybox.Graphics.COLOR_WHITE); Test.assert(f.night);
+ s.isNightModeEnabled = false;
+ s.distanceUnits = Toybox.System.UNIT_METRIC;
+ f.applySystem(s, Toybox.Graphics.COLOR_WHITE); Test.assert(!f.night && !f.imperial);
+ Test.assertEqual(f.speed(null), "--"); Test.assertEqual(f.ascent(null), "--");
+ return true;
+}
+(:test)
+function clockFormatAndSettingsSave(logger) {
+ Application.Properties.setValue("Clock24", false);
+ var f = new RideField(); f.loadSettings();
+ Test.assertEqual(f.clockText(0,5), "12:05"); Test.assertEqual(f.clockUnit(0), "am");
+ var e = new SprintSettings(); var d = new SprintSettingsDelegate(e);
+ d.onMenu(); Test.assert(e.dirty()); e.commit();
+ f.loadSettings(); Test.assertEqual(f.clockText(0,5), "00:05");
+ Test.assertEqual(f.clockText(23,59), "23:59"); Test.assertEqual(f.clockUnit(23), "");
+ Application.Properties.setValue("Clock24", false);
+ return true;
+}

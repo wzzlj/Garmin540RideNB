@@ -21,7 +21,7 @@ SPECS = {
 
 def build_font(name, height, ratio):
     numeric = not name.startswith("Unit")
-    chars = "0123456789.:+-" if numeric else "km/hWbpr%a"
+    chars = "0123456789.:+-" if numeric else "km/hWbpr%aift"
     if name == "SettingsText":
         chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789 :/+.-"
         numeric = False
@@ -80,6 +80,6 @@ if __name__ == "__main__":
     )
     icon = Image.new("RGB", (35, 35), "white")
     draw = ImageDraw.Draw(icon)
-    draw.rectangle((18, 1, 34, 15), fill="#0046b8")
-    draw.rectangle((1, 17, 17, 34), fill="#7024b5")
+    draw.rectangle((18, 1, 34, 15), fill="#0055aa")
+    draw.rectangle((1, 17, 17, 34), fill="#5500aa")
     icon.save(ROOT / "resources/drawables/icon.png")

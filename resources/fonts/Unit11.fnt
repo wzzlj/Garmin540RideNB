@@ -1,7 +1,7 @@
 info face="Titillium Web Bold" size=11 bold=1 italic=0 unicode=1
-common lineHeight=11 base=11 scaleW=80 scaleH=11 pages=1 packed=0
+common lineHeight=11 base=11 scaleW=94 scaleH=11 pages=1 packed=0
 page id=0 file="Unit11.png"
-chars count=10
+chars count=13
 char id=107 x=1 y=1 width=6 height=8 xoffset=0 yoffset=0 xadvance=6 page=0 chnl=15
 char id=109 x=8 y=1 width=10 height=6 xoffset=0 yoffset=2 xadvance=10 page=0 chnl=15
 char id=47 x=19 y=1 width=6 height=9 xoffset=0 yoffset=0 xadvance=6 page=0 chnl=15
@@ -12,4 +12,7 @@ char id=112 x=53 y=1 width=6 height=9 xoffset=0 yoffset=2 xadvance=6 page=0 chnl
 char id=114 x=60 y=1 width=4 height=6 xoffset=0 yoffset=2 xadvance=4 page=0 chnl=15
 char id=37 x=65 y=1 width=7 height=9 xoffset=0 yoffset=0 xadvance=7 page=0 chnl=15
 char id=97 x=73 y=1 width=6 height=6 xoffset=0 yoffset=2 xadvance=6 page=0 chnl=15
+char id=105 x=80 y=1 width=3 height=8 xoffset=0 yoffset=0 xadvance=3 page=0 chnl=15
+char id=102 x=84 y=1 width=4 height=8 xoffset=0 yoffset=0 xadvance=4 page=0 chnl=15
+char id=116 x=89 y=1 width=4 height=8 xoffset=0 yoffset=1 xadvance=4 page=0 chnl=15
 kernings count=0

@@ -15,8 +15,8 @@ mkdir -p bin
 # SDK 9.3.0's gradual checker throws ConcurrentModificationException on this
 # valid model. Its bytecode compiler works with type checking disabled.
 "$CIQ_SDK/bin/monkeyc" -f monkey.jungle -d edge540 \
-    -o bin/Garmin540RideNB.prg -y "$key" -l 0 -w -r
+    -o bin/Ride540NB.prg -y "$key" -l 0 -w -r
 if [[ "${1:-}" == "--tests" ]]; then
     "$CIQ_SDK/bin/monkeyc" -f test.jungle -d edge540 \
-        -o bin/Garmin540RideNB-tests.prg -y "$key" -l 0 -w -t
+        -o bin/Ride540NB-tests.prg -y "$key" -l 0 -w -t
 fi

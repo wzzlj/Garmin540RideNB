@@ -1,17 +1,17 @@
 ------------------------------------------------------------------------------
 Executing test auditSlowClimbGrade...
-DEBUG (05:30): 3.6 km/h, 10% climb, 30 s: grade=10.000000
+DEBUG (06:15): 3.6 km/h, 10% climb, 30 s: grade=10.000000
 PASS
 ------------------------------------------------------------------------------
 Executing test auditMissingTimerClearsLap...
-DEBUG (05:30): missing timer: lapTime=null lapSpeed=null
+DEBUG (06:15): missing timer: lapTime=null lapSpeed=null
 PASS
 ------------------------------------------------------------------------------
 Executing test auditIncompleteStoredState...
 PASS
 ------------------------------------------------------------------------------
 Executing test auditUnobservedLowPowerGap...
-DEBUG (05:30): 10-second callback gap: high=true
+DEBUG (06:15): 10-second callback gap: high=true
 PASS
 ------------------------------------------------------------------------------
 Executing test auditNegativeGrade...
@@ -27,7 +27,7 @@ Executing test auditLongRideSampleBounds...
 PASS
 ------------------------------------------------------------------------------
 Executing test auditRoundedEntryBoundary...
-DEBUG (05:30): 599.67 W displayed=600, high=false
+DEBUG (06:15): 599.67 W displayed=600, high=false
 PASS
 ------------------------------------------------------------------------------
 Executing test malformedStorageVariants...
@@ -49,6 +49,12 @@ Executing test deviceThresholdEditorSaveAndLimits...
 PASS
 ------------------------------------------------------------------------------
 Executing test settingsConfirmationFlow...
+PASS
+------------------------------------------------------------------------------
+Executing test automaticSystemUnitsAndNight...
+PASS
+------------------------------------------------------------------------------
+Executing test clockFormatAndSettingsSave...
 PASS
 ------------------------------------------------------------------------------
 Executing test powerWindowIncludesZero...
@@ -133,6 +139,8 @@ rawPowerControlsSmoothedSwitch        PASS
 configuredEntryThresholdChangesSwitch PASS
 deviceThresholdEditorSaveAndLimits    PASS
 settingsConfirmationFlow              PASS
+automaticSystemUnitsAndNight          PASS
+clockFormatAndSettingsSave            PASS
 powerWindowIncludesZero               PASS
 missingPowerShowsMissing              PASS
 lapBoundaryUsesLatestActivity         PASS
@@ -154,6 +162,6 @@ hysteresisBandCancelsReturn           PASS
 automaticSwitchCanBeDisabled          PASS
 signalLossReturnsAfterTimeout         PASS
 settingsValidateNewOptions            PASS
-Ran 37 tests
+Ran 39 tests
 
-PASSED (passed=37, failed=0, errors=0)
+PASSED (passed=39, failed=0, errors=0)
